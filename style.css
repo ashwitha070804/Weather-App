@@ -1,0 +1,140 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #eef2f3; /* Light background color for contrast */
+    color: #333; /* Dark text for readability */
+}
+
+/* Header styles */
+.header {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.header h1 {
+    text-align: center;
+    margin: 15px 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2.5rem; /* Larger font size for title */
+}
+
+.header h3 {
+    text-align: center;
+    margin: 10px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-size: 1.5rem; /* Appropriate font size for subtitle */
+}
+
+/* Weather search styles */
+.weather {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align items horizontally */
+    margin: 40px auto; /* Center the weather box horizontally */
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), /* More prominent shadow */
+                0 12px 20px rgba(0, 0, 0, 0.1); /* Subtle secondary shadow */
+    background-color: #f9f9f9;
+    max-width: 600px; /* Wider box for more content */
+    width: 100%;
+    margin-top: 0px;
+}
+
+.weather .search-box input[type="text"] {
+    width: 70%; /* Responsive width */
+    height: 50px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.search-button {
+    background-color: #007BFF; /* Blue background for better contrast */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 8px;
+}
+
+.search-button img {
+    width: 25px; /* Smaller button icon */
+    height: 25px;
+}
+
+.sunny img {
+    width: 140px;
+    margin: 15px auto;
+    display: block; /* Center the image */
+}
+
+/* Forecast styles */
+.forecast {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), /* More prominent shadow */
+                0 12px 20px rgba(0, 0, 0, 0.1); /* Subtle secondary shadow */
+    background-color: #f9f9f9;
+    max-width: 600px;
+    width: 100%;
+    height: auto; /* Allow for dynamic height */
+    margin: 40px auto; /* Center the forecast box */
+    padding: 20px;
+    margin-top: 0px;
+}
+
+.temperature {
+    margin: 15px 0;
+    text-align: center;
+    font-size: 2rem; /* Larger temperature font */
+}
+
+.city1 p {
+    margin-left: 205px;
+    margin-top: 15px;
+    font-size: 1.8rem;
+}
+
+.humid img,
+.windspeed img {
+    width: 25px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between; /* Distribute flex items evenly */
+    margin-top: 35px;
+    padding: 0 25px; /* Add padding for spacing */
+}
+
+.humidity,
+.wind {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+/* Adding some interactive styling */
+.search-box input[type="text"]:focus {
+    border-color: #007BFF; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.search-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.forecast{
+    display: none;
+}

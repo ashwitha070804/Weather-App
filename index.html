@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="header">
+        <h1>Global Weather Explorer</h1>
+        <h3> "Discover the weather anywhere, anytime. Get real-time updates on the conditions of cities around the world."</h3>
+    </section>
+
+    <section class="weather">
+        <section class="search-box">
+            <input type="text" placeholder="Enter a city name" field="required" class="searchbox">
+        </section>
+        <button class="search-button">
+            <img src="search-icon-png-transparent-25.jpg" alt="Search" class="searchbutton">
+        </button>
+    </section>
+<section class="forecast">
+    <section class="city1">
+        <p class="city"></p>
+    </section>
+    <section class="temperature">
+        <h1 class="temp1">20</h1>
+    </section>
+    
+
+    <section class="flex">
+    <section class="humidity">
+        <section class="humid">
+            <img src="578135.png" alt="humidity">
+            </section>
+            <section class="humidpercentage">
+            <h2 class="hum">50</h2>
+            <p >Humidity</p>
+        </section>
+    </section>
+    <section class="wind">
+        <section class="windspeed">
+            <img src="Wind-PNG-HD-Image.png" alt="wind">
+            </section>
+            <section class="windspeedpercentage">
+            <h2 class="win">43</h2>
+            <p>Wind Speed</p>
+        </section>
+    </section>
+</section>
+</section>
+
+   
+
+
+
+<script>
+const apikey="457a276fa0d19dfe8f5b691374521fdc";
+    const apiurl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+    const searchBox=document.querySelector(".searchbox");
+    const searchBtn=document.querySelector(".searchbutton");
+    const weatherIcon=document.querySelector(".sunny1");
+    async function chechweather(city) {
+        
+        const response=await fetch(apiurl +city+`&appid=${apikey}`)
+        var data=await response.json();
+        console.log(data)
+
+
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".temp1").innerHTML = Math.round(data.main.temp)+'°C';
+        document.querySelector(".hum").innerHTML=Math.round(data.main.humidity)+'%';
+        document.querySelector(".win").innerHTML=Math.round(data.wind.speed)+'km/hr';
+
+
+        document.querySelector(".forecast").style.display="block";
+
+
+}
+
+    searchBtn.addEventListener("click",()=>{
+        chechweather(searchBox.value);
+    })
+    
+
+
+</script>
+</body>
+</html>
